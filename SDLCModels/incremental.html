@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incremental ehk Inkrementaalne arendusmudel</title>
+</head>
+<body>
+    <h1>Inkrementaalne Arendusmudel</h1><br/>
+    <p>
+        Inkrementaalne arendusmudel on üks viis kuidas lahendada kosemudeli jäika tsüklit. See aitab arendusmeeskonnal<br/>
+        toime tulla muudatustega paremini. Muudatused võivad tulla kas äritegevusest, kliendisoovidest, turu olukorra<br/>
+        muutumisest, tehnoloogiate muutumisest, seaduse muudatustest või siis lõppkasutaja tagasisidest.<br/>
+        Kuna kosemudelis keset arendustööd on muudatustega toimetulek keeruline, on kosemudeli kasutamise puhul<br/>
+        muudatuste sisseviimine üsna kulukas, siinkohal tulebki appi inkrementaalne arendusmudel. Mudel ise on<br/>
+        ajagraafikupõhine ja ei tugine, erinevalt kosemudelist, täielikult valmiskirjeldatud kavandile. Selles mudelis<br/>
+        saab arendada erinevaid programmi osi samaaegselt või erinevatel aegadel. Inkrementaalses arendusmudelis aitab<br/>
+        samaaegset arendustööd teha kindlad tegevused, mida kosemudelis ei ole. Nende tegevuste abil on võimalik kliendile kuvada<br/>
+        programmile keskse tähtsusega osi, enne kui neid täielikult arendama hakatakse. Tehakse näiteks, kas mingisugune<br/>
+        kasutajaliidese prototüüp, või programmeeritakse vähese testimise läbinud MVP (Minimum Viable Product) mis omab<br/>
+        ainult prgrammi nõuetes kirjeldatud keskset funktsionaalsust. Näiteks:<br/>
+        Ütleme et tegemist on failikonverteriga, siis ei oma ta suurt kasutajaliidese kujundust, ega isegi kõiki formaate<br/>
+        mis lõpp-programm teisendama peab, vaid ainult demonstreerib seda funktsionaalsust käsurea abil, osaliselt. Teisendab<br/>
+        ainult kahte-kolme formaati.
+    </p><br/><br/>
+    <h2>Kuidas on inkrementaalses arenduses tegevuste käik?</h2><br/>
+    <p>
+        <h3>Nõuete kirjeldus</h3>
+        Kirjeldatakse ära üldjoontes mida valminud tarkvaratoode tegema peab. Nõuded jaotatakse ka ära tähtsamateks ning<br/>
+        vähem tähtsamateks. Tähtsamad nõuded on tavaliselt need, mis kliendile rohkem väärtust toob. Siin määratakse ära ka<br/>
+        kuidas arendustöö toimima hakkab, ehk millistes inkrementides klient oma toodet saama hakkab - ehk kui pika aja tagant.<br/>
+        Iga inkrement peab tarnima kliendile  mingisuguse toote fukntsioneeriva osakese.
+
+        <h3>Süsteemi arendus</h3><br/>
+        Kui nõuded on olemas, ning ära jaotatud prioriteedi järgi hakatakse toodet tarnima peale nüüd teostatavat arendusprotsessi.<br/>
+        Siin arendataksegi välja vastavalt nõuetele programmiosa. Iga inkrementi saab arendada kasutades erinevaid eksisteerivaid<br/>
+        arendusmudeleid. Näiteks:<br/>
+        On olemas nõuetes programmiosa mille arendus ei vaja dünaamilist nõuetele vastavuse jälgimist nagu faili sisse lugemine<br/>
+        või faili kirjutamine - seda programmiosa saab arendada näiteks <a href="./waterfall.html">Kosemudeli</a> abil<br/>
+        See milline arendusmudel kõige paremini sobib on arendusmeeskonna enda otsustada vastavalt sellele milline nõutud programmiosa parasjagu<br/>
+        arenduses on.<br/>
+
+
+    <h3>Aredusega samaaegne nõuete täiendus</h3>
+    Kui arendatava programmiosa nõuded on külmutatud (ehk hetkel, arendusöö ajal, on nende muutmine võimatu), siis muude<br/>
+    arnedusse tulevikus minevate osade nõudeid on võimalik veel muuta. Kui on vaja ka juba arendatud ning kliendile üleantud<br/>
+    inkremendi nõudeid muuta, siis seda saab ka teha. kuid olemasoleva inkremendi mille nõudeid muudeti, läheb tagasi arendatavate<br/>
+    tööde nimekirja, pärast nende nõuete muutmist. Ehk, kõik nõuded mis ei kuulu parasjagu arendatavate programmiosa juurde on<br/>
+    lahtised. Mis tähendab ka ühtlasi seda, et projekti nõuded selle alustamiseks ei pea olema täielikult kirjeldatud.<br/>
+
+    <h3>Tarne ja integratsioon</h3><br/>
+    Nõuetele vastava programmiosa valmimisel tarnitakse programmiosa - ehk inkrement - kliendile. Klient saab siis selle<br/>
+    kohelest kasutusse võtta - või omapoolselt läbi testida - ja täpsustada edasisis projektis olevaid nõudeid ning anda tagasisisdet<br/>
+    juba valminud programmiosade kohta. Selle tagasiside põhjal võidakse tuletada ka juba valminud osadele uusi nõudeid. Klient saab ka<br/>
+    valminud osa koheselt integreerida muu olemasoleva keskkonna või eelnevalt arendatud toote süsteemidega.
+</p><br/><br/>
+    <h2>Arendusmudeli head ja vead</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Head küljed</th>
+                <th>Halvad küljed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Klient saab valminud tooteosa katsetada/kasutada ilma, et kogu projekt valmis oleks</td>
+                <td>Progressi jälgimine on keerukas - Arendustöö progrssi ei jälgita enam arendatud<br/>
+                nõuete järgi vaid arenduskiiruspõhiselt - kui palju igas ajavahemikus arendada on võimalik</td>
+            </tr>
+            <tr>
+                <td>Iga inkrement on arendatav erineva arendusmudeli abil</td>
+                <td>Projekti struktuur degredeerub iga uue muudatusega, kuna nõuded on muutuvad ning<br/>
+                struktuur ei pruugi muudatuste arvule või muudatuste vajadustele vastu pidada - tekib spagett.</td>
+            </tr>
+            <tr>
+                <td>Kulutused on väiksemad - kuna kasutaja nõuded on muutuvad, aga muudatusi saab sisse viia<br/>
+                arendustsükli käigus on muudatuste sisseviimise kulud väiksemad, kui neid teha pärast<br/>
+            esmast arendustsükli lõpuleviimist</td>
+                <td>Koodi korrashoiu mitteteostamine tõstab hiljem paranduste ja muudatuste sisseviimise kulusid</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+     </table><br/><br/>
+     <h2>Arendusmudeli joonis</h2>
+     <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQQEBAQERIWEBURFRUPEhUVGBUWFRUSFxEWFhUWFhUYHSggGB0mHRUYITMhKSssMi4uFyE5ODMsNyguLisBCgoKDg0OGhAQGjUiHyIuMy8rLSs3LystNS8tNS8rLSsrLS0tLS0tLS0tLTUtLS0tLSs3Ky0tNzcrLTcrNys3Lf/AABEIAKABOwMBIgACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAABAUGAwECB//EAEcQAAEDAQMFCwoFAQgDAQAAAAEAAgMRBBIhBRUxUVMGEyJBc5GSk9HS0xQjMzRSYXGys7QyQlSBohYHYmNyobHB8EOCgyT/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAwQFAgH/xAAnEQACAQIFBAIDAQAAAAAAAAAAAQIDEQQTFDNREjEyQSFhIqHwcf/aAAwDAQACEQMRAD8A/cUREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREARFQbopXNlga17mhzJXG6S2pa6ECtNV4866jFydkcykoq7L9Fj9+ftZOm7tTfn7WTpu7VPpZkGqh9mwRY/fn7WTpu7U35+1k6bu1NLMaqBsEWP35+1k6bu1N+ftZOm7tTSzGqgbBFj9+ftZOm7tTfX7WTpu7U0sxqoGwRZASv2snTd2rS5KkLoIXONS6NjidZLASVFUpOHclp1VPsSlk90NmY+1Ovsa+kMVLzQaecm1rWLM5c9adyMX1J11Q3Ec1/BlVm+LYx9BnYmb4tjH0G9ikr4kbW43EB0kTDQkG66ZjXUIxGBK0HZK9ihFtu1zjm+LYx9BvYmb4tjH0G9i0v8AT0H+J103fT+n4NUnXTd9VtTDgsaefJms3xbGPoN7EzfFsY+g3sWl/p6DVJ103fT+noNUnXTd9NTDgaafJms3xbGPoN7EzfFsY+g3sWl/p6DVJ103fT+noNUnXTd9NTDgaafJms3xbGPoN7F7m+LYx9BvYrrKuRYo4J5Gb4HMje9p32U0c1hINC6hxCrSpac41L2RFUhKna7I+b4tjH0G9iZvi2MfQb2KQil6VwR9TI+b4tjH0G9i7ZNskbbVZS2NjTvj8Q1oPq03GAvpdLF6zZeUf9tMo6yXQySlJ9aNaF6iLMNIIiIAiIgCIiAIiIAiIgCzu6T01n5Of54Folnd0nprPyc3zwKWjuIirbbK1wcSxjKXpHBja6BWpLjroATTjpSorVWoyDJtmdUfEVfY/T2flD9KRXGUrQ9kgLS66ACWhtam8a1Jaain95t2leFWimxFSUZWTIcPTjKN2iNmF+2b1R8RMwv2zeqPiI7K0xAuxEVZfvXXlul3EaO0NHFjfBwpQ9JbdM511rHNo9wJuki618eio4w44+44cagzp8k2TDg55hftm9UfETML9s3qj4i9s2VJbkRfC+8+QRu4JqGlzRfNMAKOr8GmoGN1BlSa429ES641zqNc0F3k7nkUNSOGAKfDE6Ezp8jJhweZhftm9UfEUbKOTZIWCS+2QBzWuaGFp4cjWXgS8jC9WlMeLUZ7cpSk3d61AGjwDWSNt/RgCHuNNI3s1931lWUvsYe5t0u3lxadLSZIyR+y9jWnfueOjC3YpVpsjerWfko/kCzKvMkSy+TwUiafNR/+T+4P7qnxXohwnv8AuS2WZy5607kYvqTrLbqt1OVoMqCCx2MWqIxRPcy6S1ri+QOPlAuhhIA/FUC7o0q6NomkkD7TALNIYYr0YkEob5yf84ABUOH3ETYjbZ9rw/ii5aD7iNer5fXgkCpa+OShNKhkrXEV+AV+avFlCDtJM2ipbTZZzNvgcLhextwEgiNkjHXib1CeC/CmiQDix+M/nY/zHYmfzsf5jsWdlT4NHOhyfFidanseb1OA7e7zWg76GACoujgXnH38Ae+veFlpFwucT5xtQBEPNXW1vajW9WhOIFKAkrnn47H+Y7Ez+dj/ADHYmVPgZ0OT5jZawwCovC4P/HdrcfWmFbtd6vceD7vErGwNlDpN8N4ElzPw4AySUbgBhc3vTjUnFQM/nY/zHYmfzsf5jsTKnwM6HJOy96raeRl+m5ZwqblHK7pYZYxFQyRvjBLxQFzSKnD3qEVaw0HG90VcTOMrWYREVoqhdLF6zZeUf9tMua6WL1my8o/7aZR1vBklHzRrkRFlmoEREAREQBERAEREAREQBZ3dJ6az8nN88C0Szu6T01n5Ob54FLR3ERVttleyS4+KSl7e33yBpLbrmmmsi9WnHRXhy9ARiX9TP3FRorlSgpu9ynTruCtYvRl6DW/qZ+4vGbobO4Bwc8ggEHeZ8QdH5FSBRsm+hh5NnyBR6Vckmqduxpc/Qa39TP3F4N0VnqW3n1ADqb1PWhJAP4PceZUaxVnmtWfpXGCTyd0LbNfpwQG1ex/wL77R/mXMsPGNvk7jiJSv8dj9Sz/Brf1M/cULK2VmSx73EHOc5zDwmSRtDWytc43nN00BoOM6hUivRdrCxT7kbxTatYBUuXv7UoMmwQxmzWiWTeo6VY6GIm4NEkgx0HFoKulocn2ZktkgZIxsjTFHVrgHNPAGkHArjFejrCe/7k+bDldskUchbIC9jXkCKYgFzQaA3MdKp8qTh9peQHCkUQ4TXsPpJuJwBWoijDWhrQAGgNAGAAAoAAs3lz1p3IxfUnUWH3ETYjbZERF451BUmg960jNPUXLylntt6Te1PKWe23pN7V5dHtmdUXLylntt6Te1PKWe23pN7Uuh0s6ouXlLPbb0m9qeUs9tvSb2pdDpZ1RchaGe23pBdV7c8sEREAXSxes2XlH/AG0y5rpYvWbLyj/tplHW8GSUfNGuREWWagREQBFUZOsjTBC975SXRsc479NpLASfx6ypAsUZ/NL10/H/AO6AnooLcnsP5peun76GwM9qXrpu+gJyKD5BHjwpcP8AGn76DJ7Pal66fvoCcih5tZ7UvXT99e5L9HQkmj5WgkkmjZntFScTgBpQEtZ3dJ6az8nN88C0Szu6T01n5Of54FLR3ERVttleiMjvvijqWh7w0lumgaXEA8VbtPgTShxV8MgQey/rZu+rlSuoOzRTp0HNXuZDdFZHTWS0Rxucx7o3b25hLXB4FW0II4wFS/2Y2aRmToXyve901Zhfc5xaw4MAvHAXQD+6/SDkKAflf1s3fXke5+AAANeAAAAJZqAUwA4ah1EerqsTKhLp6blGo7PTScnF88y0pyFAPyv62bvrwbn4K1uvqQBXfZtArT8/vPOutVHg5WGfJRor7MMHsv62bvqFlbJMcUe+R32lrmaXvcCHSBpBDyRod8V6sVFu1jx4V27lctNkb1az8lH8gWZC02RvVrPyUf0wucX6OsJ7/uSYszlz1p3IxfUnWmWYy3607kYvqTqHD7iJsRtsiL5cKui5aD7iNfS8P4ouWg+4jV+p4P8AwoU/Nf6aqQxtNHBo4JfiB+FtLx/ao51418ZLQA2rgSBQVNKVwppFdGle2uyCW7erwSHYcetp1gjAhQbPkJjHXrznG9fBNMPRVAwwB3luHvPuAyjVJ/m6Vo2mvg0wrXH9jzL2jNTccBo+I/0VZFucja0NDn4NDKlxrwXAtNa1qKUrqcV1iyIxtyhILHMdXCpDGMYGk6SPNg/En3UAmt3s40bxcQ49A9xNdCcDU3mGFKadWkKtZueYG3L7qABv5a0DZGnGmnzrseLDUujshMq5wJF4lxFG0vG0GckimPCNPeAgPcrhjrHO9oBDoJHNNOIxEgqjKvsoWYMsUsQqQyzvjGsgREcXwXmYYdT+tm76no1VTvdEFai6lvkoUXOAUFMTQuGJJNA4gVJxOhdFoJ3VzPas7BdLF6zZeUf9tMua6WL1my8o/wC2mXFbwZ3R80a5ERZZqBERAVVlhL7HZwKVDIJBXQSy48AnirdpXGlVFdkiTfGvDhS8x721cOELU6c0oOFS8WgGmmuFFOscE0cccfmzca1leEK3WgVpxaF289qj53diArDk2e40Cch3BvG84aGkcHDDEh1KY0ocCpNpsUhke9jw0O3vDHAte0k1GmrQRT3qV57VHzu7E89qj53diAqTk2Z4c0yG6WPio5xxJjcy8RQ1BJBrgRdw0kLsLBMJS8PFHObWr3YsEwfX8OBugtu6OEcRoVh57VHzu7E89qj53diA8yZC9kYbI684E43nONK8bnaeYDi4lHyfDIWuIlujfZqC4DT/APRJxqT57VHzu7F92GAsZRxBJc95poq+Rz6DpUQGF3dbkbfbLVZJbJbfJRE17JHguY6jntNAxmD/AMOgkY0U2SxTwGzMtNqNsfvc1ZDGyL81nqA1nF8VtVnd0nprPyc3zwKWjuIirbbIdj9PZ+UP0pFrljKkFrm0DmG82uIrQjEaiCR+6sxl6TYs613hqbEU5SldIhoVIxjZst8oQmSNzGm7e4LjSvBP4qDWRUfuqxuTZhcAmwY5oFC5vmm3sKAUriBTQbuK55+k2LOtd4S52XdHI9jH7wwXmtdTfXYVaDsveoMmfBPmw5OxyZMWxtMt66+N7quf+UwuJrThcJklGnDzg0UCkWWyzB7HPeCBUOF95H4ABQUAJJFTXRxaaqLn6TYs613hKIzdhW0OsoiZvjI2zkb6fwOe5oPo9Y/kNaOlNehmwfs1QVdug9Xd/mj+sxQc/SbFnWu8JRbdlKSYXCxkbatcSHOe43XXqCrWhuIGOPH8V1GjO/Y5lWhbuRwrzI8Mnk8Hnaeaj/IPYCpAqXdHPlxtmizdHZ3MMMYBaS60DzbcQJaM/wB9KmxXohwns+90247KVoykLVZcoeSRiJjHEXiXPY55xhHAcOENJ1/vazWaSKW5NMbS8QxVkLGsLvOT/lbgFoMnOtBhiLwy8WML63gb10XqimBrVU+Vb3lLr92u9RUu1pTfJtahw+4ibEbbOC+XtrShoWuY8HTix4cMPiF9ItFq6sZydnc6WrLFoZG9wewlrXOHA4w0n2vctGIJNt/BqylpivseytLzXNrqq0j/AJVpnyXZx9J3dVOtQ+V0IuUa/frZb7xJtv4NTeJNt/Bq4WC1TSxtkuxtrUUq46HFumnuXfz2qPnd2KoWxvEm2/g1N4k238Gp57VHzu7E89qj53diA52ixPexzHS4PaWGjG1oRQ051OoovntUfO7sTz2qPnd2ICnseRL7A7fXC8XOpdbhVxKgyxFkksZdeuODQaAGhiY7GnvcVqbFCWRtaSCQMSNFa1wVJNk2SWe0ua5oG+NHCDq18ni1KxSrNS/J/BXq0k4/ivkgLpYvWbLyj/tpktdmfC9rHlrrzXOBbXC6Wihr/m/0Sxes2XlH/bTK1OSlTbRVpxcaiTNciIs00giIgCIiAIiIAiIgCIiALO7pPTWfk5vngWiWd3Sems/JzfPApaO4iKttsr0XjnAAkmgGJJ0AL530f9B7FpOSXdmaot9jnbrYyCN0srgxjKFzjWgFaVNB71C3N5UitNnY6CRsoY1sbi2uDxG0lprx4hd8qQMtEE0DtEsb4zgfzNI/5VVuFyYLHYIIXVD6GSTA+keakaOLAfso+v8APv8ABKofh2+TRLJQbm5RliS3+UAtLGtMVw+ic1zAy9ewoYw6tNK1W+j/AKD2LgyQb6840LIwDQ0qHy1Gj3jnXsnB2uzyPWr2RKRfG+j/AKD2IJQTSuOrRX4V0rrrjycOMl6PtabI3q1n5KP5AsyFpsjerWfko/kCq4r0WsJ7/uSWAs1lz1p3IxfUnWmWZy5607kYvqTqHD7iJsRtshoiLSM0IiICfk3LAiiEbopCWl+I3qhq9xBFX6ip9jyxvt+5BKbjrjsYRR1xruOTU4c6oVNyDb44vKBLI2MulDgHECrd4iFRXiqCP2VGtRUVdF6jWcnZlz5Y/wDTy88HiJ5Y/wDTy88HiLnnqz7ePpBM9Wfbx9IKtZ8Fm6Onlj/08vPB4ieWP/Ty88HiLnnqz7ePpBM9Wfbx9IJZ8C6Onlj/ANPLzweIvMnh16ZzmGO/IHNDi0mghjbXgkjS08a+M9Wfbx9IJnqz7ePpBLPgXRXbo/TQ8nJ88ahWL1my8o/7aZdcsWyOWaMxvbIGxvDi01AJeylafA8y5WL1my8o/wC2mVyGwynLfRrkRFSLoREQBERAEREAREQBERAFnd0nprPyc3zwLRLO7pPTWfk5vngUtHcRFW22QbM0Gezg4jfQafBj3DmIB/ZauaUMFToqBzkAf76VlrH6ez8ofpSLVyxhzS0iocC0jWCKELvE+ZxhvAjvygwFwLhVpDSOOrnNaDTjFXAV0A11FettzLxbfFRcqKjS+t0fE3ThpUR+Q2EtJfJwQBS8KEh4eXnDFxIxPvK+RkCO9evP0hwFW0oHSOLfw4gmVxNf2oq5YJ5tbMOG01N0YjFwNCPiDpXnljCKh7SBSpDgQASRU6sQR+xUOLIUbQ0AuN01BJBODoiBWnFvLB8EkyDE5hYb10gNIF3QBGNWqJoQE9loaSAHAlwvgAg1b7Q1jEY+9Qd0TQbO6vE+I/uJmLpFktrZd9BdWhFCRdqXvdWlNPnHCuor53Qeru/zRfWYvY90eS7GfC02RvVrPyUfyBZkK5yVk2DyaAmGL0UZJLGewMSaK3i/RUwnv+5PLbuqskFpFkmtEcMxa14bIbgc1xIbdc6jSatOFa86g5YeHWkkGoMMRBGII3ybjUDLH9mdht1qFsma5wuMY2JhEcRALjeNwAmt7XxLpNkqGyS7zZ4mwxthio1goKmSepOs+8qHD7iJsRts9RF8SMDjG1wDg6WFpBFQQZ2Agg6RRaMnZXM+Ku0jpRKLQOyPZgKmzwj/AOcfYvM02Wt3yeCtK03uOtNdKKrq/otaX7KCiLQ5ls36eHq2di9zLZv08PVs7F5q/oaT7M6i0AyPZtHk8OGB83HhhXUvcy2b9PD1bOxNX9DSfZnsUqrXLWSIG2a0ObBE0tikc0iNgIIYSCCBgVVFTUquZf4IatLLt8iqVXiKYhC6WL1my8o/7aZc10sXrNl5R/20yjq+DJaPmjXIiLLNMIiIAiIgCIiAIiIAiIgCzu6T01n5Of54FolU5XyU6Z8b2SNjuNe0hzC+t8sPE9tKXPfpXdOSjNNnFSLlFpFC9tdYoQQQSCCDUEEaMQu3lU36iTmh8NTMwS7ePqXeMmYJdvH1LvFVt1aMu5TVKrHsQ/K5/wBRJzQ+Gnlc/wCok5ofDUzMEu3j6l/ipmCXbx9S/wAVeddDg96K3P7Iflc/6iTmh8NPK5/1EnND4amZgl28fUv8VMwS7ePqX+KnXQ4HRW5/ZD8rn/USc0PhrnNI99BJK+QAhwaboF4aCbjRepqNRWhpUClhmCXbx9S/xUzBLt4+pf4qZlDgZdbn9leFQbpv7NZMpWeFzco2hl6KI7zIb9nwYNDGXbuONTeOHNr8wS7ePqXeMruxQb3HHHWtxrWV0VutArTi0KKvUjO1ibD05Qvch5Oya+OGKMzPqxjGGm90q1oBpVlaYKnyrEW2l4L3P81Fi67X0k3sgLVrMZc9adyMX1J1zh9xHWI22RF4fxRctB9wxer5kBwLSAWuY8VFRVkjX4gEezrWhNXi0Z8HaSZrLdCZI3sFAXNIFdFfeqy1WCZznSXqF1xt1r3gBu+xVFcMA1jzUYnfCOLGLnibXF0H+ImeJtcXQf4iz8ipwaOfT5JFnyXLeN6ZwALB+J/nGiKNj6i8bmh5qKGr66RU9Y8lyXpHOmeQ7frovHgl54BFKUugkUx0A/CFnibXF0H+ImeJtcXQf4iZFTgZ9PklxZLlBqZjooMXm75os10fiQ6uGLMAK4dbJk57HteZDhgW3nubdrMacI4/jZwqV82FAzxNri6D/EXmeJtcXQf4iZFTgZ9Pktsveq2nkZfpuWcXe2ZQmljkjLowJGujJDH1Ac0g08571wKs4enKF7oq4icZWswiIrJWC6WL1my8o/7aZc10sXrNl5R320yjreDJKPmjXIiLLNQIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCoMsWKR05exl9pjYzAtFC18hNQ4jieFfouoycXdHMoqSszK5vm2J6UfeTN82xd0o+8tUil1FQi09Myub5ti7pR95M3zbF3Sj7y1SJqKg08DK5vm2LulH3kzfNsXdKPvLVImoqDTwMrm+bYu6UfeTN82xd0o+8tUiaioNPAyub5ti7pR95M3zbF3Sj7y1SJqKg08DK5vm2LulH3kzfNsXdKPvLVImoqDTwMrm+bYu6UfeXWxZPlE8DnRlrWOc5xLmHAwyNGAJNauC0qLyVeclZnUaEE7oIiKElP//Z" alt=""><br/>
+     <h2>Inkrementaalne ja Iteratiivne?</h2>
+     <p>
+        Kuna inkrementaalne arendus ja iteratiivne arendus on lihtsalt sarnased sõnad, kipuvad nad inimestel sassi minema,<br/>
+        aga siiski tähendavad eri asju:<br/>
+        <ul>
+            <li><h3>Inkrementaalne arendus</h3> - on tarkvaratoote arendus kus iga inkremendi raames valmib toimiv tarkvara osa.<br/>
+            Valmis saadud tarkvara toote osake integreeritakse muu süsteemiga mis eelnevalt arendatud on.</li>
+            <li><h3>Interatiivne arendus</h3> - on muutmisstrateegia kus parandatakse või tehakse ringi juba olemasolev süsteem,<br/>
+            et seda siis täiustada, ehk olemasolev süsteem saab uue ja parema variandi - ehk iteratsiooni.</li>
+        </ul>
+     </p><br/><br/>
+     
+</body>
+</html>
