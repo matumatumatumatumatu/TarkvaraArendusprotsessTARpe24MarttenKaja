@@ -8,9 +8,79 @@
 <body>
 
     <h1>Unified Modeling Language</h1><br /><br />
-
+    <h2>Mis on UML?</h2>
     <p>
+        UML on üldotstarbeline noteeringu keel keerulise tarkvara projektide spetsifitseerimiseks ja<br />
+        visualiseerimiseks. Nt - Suured objektorienteeritud projektid.<br />
+        UML põhineb vanematel noteeringumeetoditel nagu Booch, OMT ja OOSE<br />
+        Uml diagramme on peamiselt kahte tüüpi:<br />
+        Strukturaalne diagram - Kujutab süsteemi staatilist arhitektuuri, elemente mis teevad kokku struktuuri<br />
+        ja kuidas need ühendatud on. See keskendub komponentide vahelistele suhetele, nt klassid, objektid interface'd jne<br /><br />
+        Käitumuslik diagram - Kujutab süsteemi dünaamilisi objekte. Näitab kuidas komponendid interakteeruvad<br />
+        ja suhtlevad.
+    </p><br /><br />
+    <h3>Use case diagram</h3><br />
+    <p>
+        Kõige tuntuim käitumuslik UML tüüp. Use case diagram annab graafilise ülevaate sellest, kuidas<br />
+        "näitlejad" on seotud süsteemis, erinevad funktsioonid mida need näitlejad vajavad ja kuidas need<br />
+        funktsioonid interakteeruvad.<br /><br />
 
-    </p>
+        Pilt kujutab, et 1 näitleja peab olema seotud vähemalt ühe use case'iga.<br />
+        Saab olla seotud mitme use case'iga.<br />
+        Mitu näitlejat saab olla seotud ühe use case'ga.<br />
+        extend>> suhe lisa rohkem funktsionaalsust süsteemi. Selles näites ei ole "Calculate Bonus"<br />
+        loogiline ilma "Deposit Funds"ita.<br />
+        include>> suhe näitab, et see tegevus on seotud baas use case'iga. Seda kasutatakse selleks et taaskasutada<br />
+        eelnevalt kasutatud funktsioone.
+        <img src="https://d3n817fwly711g.cloudfront.net/uploads/2015/02/use-case-diagram-relationships-include.png" alt=""><br />
+
+    </p><br /><br />
+    <h3>Class diagram</h3><br />
+    <p>
+        Class diagram on projekti põhi building block. See kuvab klasse süsteemis, nende attribuute ja<br />
+        klasside vahelist suhet.<br /><br />
+
+        Üldine suhe<br />
+        <img src="https://creately.com/static/assets/guides/class-diagram-relationships/association.webp" alt=""><br />
+        Ühesuunaline suhe<br />
+        <img src="https://creately.com/static/assets/guides/class-diagram-relationships/directed-association.webp" alt=""><br />
+        See juhtub, kui klassil on mitu funktsiooni.
+        <img src="https://creately.com/static/assets/guides/class-diagram-relationships/reflexive-association.webp" alt="">
+    </p><br /><br />
+    <h3>Sequence diagram</h3><br />
+    <p>
+        Sequence diagram kuvab kuidas objektid interakteeruvad üksteisega ja järjekorda, mil see toimub.<br /><br />
+        
+        Lifeline elemendid paigutatakse diagrammi tippu. Need märgivad rolle mis osalevad modelleerimises.<br />
+        <img src="https://d3n817fwly711g.cloudfront.net/uploads/2011/08/Lifelines.png" alt=""><br />
+        Sõnumid on märgitud vasakule poole diagrammi ja pannake madalamale eelmisest sõnumist<br />
+        <img src="https://d3n817fwly711g.cloudfront.net/uploads/2011/08/Messages.png" alt=""><br />
+        Valvureid kasutatakse märkimiseks, kui mingi tingimus tuleb täita.<br />
+        <img src="https://d3n817fwly711g.cloudfront.net/uploads/2011/08/Guards.png" alt="">
+
+
+    </p><br /><br />
+    <h3>State diagram</h3><br />
+    <p>
+        Need on väga kasulikud, et kuvada mingi objekti käitumist olenevalt nende olekust.<br /><br />
+        All olev pilt kuvab mis tingimusel mäng lõppeb<br />
+        <img src="https://d3n817fwly711g.cloudfront.net/uploads/2012/02/State-Machine-Diagram.jpg" alt="">
+
+    </p><br /><br />
+    <h3>Activity diagram</h3><br />
+    <p>
+        Activity diagram kuvab töökurssi graafiliselt. Neid saab kasutada, et seletada äri töökurssi või<br />
+        operatsioonilist töökurssi mingi süsteemi komponendi kohta.<br /><br />
+        All olev pilt kuvab töökursi järjekorda activity diagramina<br />
+        <img src="https://d3n817fwly711g.cloudfront.net/uploads/2022/08/Activity-Diagram-for-Login.png" alt="">
+    </p><br /><br />
+    <h2>Allikad</h2><br />
+    <p>
+        https://creately.com/blog/diagrams/uml-diagram-types-examples/#ActivityDiagram<br />
+        https://et.wikipedia.org/wiki/%C3%9Chtne_modelleerimiskeel<br />
+    </p><br /><br />
+    <h2>Lingid järgmistele lehtedele</h2><br />
+    <a href="ERD.html">ERD</a><br />
+    <a href="flowchart.html">flowchart</a>
 </body>
 </html>
