@@ -7,6 +7,89 @@
 </head>
 <body>
     <h1>flowchart</h1><br/>
-    <h3>Mis on flowchart?</h3>
+    <h3>Mis on flowchart?</h3><br/>
+    <p>
+        Flowchart on diagramm mis kuvab töökurssi või protsessi. Flow chart diagramm saab olla ka samm-sammult<br/>
+        viis, mingi ülesande täitmiseks. Flowchart kasutab erinevaid kujundeid, värve ja nooli, et näidata mis on mis<br/>
+        ja mis on millega seotud.
+    </p><br/><br/>
+    <h3>Kus neid kasutatakse</h3><br/>
+    <p>
+        Flowcharte kasutatakse igalpool tarkvararaenduses, et kuvada mingi protsessi või programmi töökäiku.<br/>
+        Kasutatakse selletöttu, et flowchartidega on kerge ülesleida probleeme või pudelikaelu, mis võivad tekkida.
+    </p><br/><br/>
+    <h3>Kujundid ja tähendused</h3><br/>
+    <p>
+        Nool - Näitab protsessi järjekorda.<br/>
+        Ovaal - Näitab protsessi algust ja lõppu.
+        Ristkülik - Näitab operatsiooni, mis muudab millegi väärtust, vormi või andme asukohta.<br/>
+        Romb - Näitab tingimust, kus protsess jaotatakse kaheks, olenevalt kumb tingimus on täidetud.<br/>
+        Rööpkülik - Input või output.<br/>
+        Silinder - Andmebaas<br/>
+        {} - Kommentaar<br/><br/>
+        Siin on kerge näide, kus otsitakse põhjus, miks lamp ei tööta. Algab sellest, et lamp ei tööta.<br/>
+        Kui lamp pole pistikus, siis protsess lõppeb ja see tuleb pistikusse panna, kui ja siis protsess jätkub.
+        Kui pirn on läbi, siis see tuleb asendada ja protsess lõppeb. Kui see pole läbi põlend, siis tuleb<br/>
+        lamp korda teha ja protsess lõppeb.<br/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/LampFlowchart.svg/330px-LampFlowchart.svg.png" alt="">
+    </p><br/><br/>
+    <h3>Bitcoini kalkulaator</h3><br/>
+    <p>
+        <div class="diagram">
+            <pre>
+                 ---------
+                │  START  │
+                 --------- - ovaal
+                     │
+                     ▼
+            -------------------
+            │  Sisesta EUR    │
+            │     summa       │
+            ------------------- - Rööpkülik
+                     │
+                     ▼
+            -------------------
+            │  Laadi BTC      │
+            │    kurss        │
+            ------------------- - Rööpkülik
+                     │
+                     ▼
+                -----------
+             │  Kurss laeti  │
+             │  edukalt?     │ - Romb
+                -----------
+                    │
+               ┌────┴─────┐
+              JAH         EI
+               │           │
+               ▼           ▼
+         ------------  ------------ - Rööpkülikud
+         │  Arvuta  │  │  Kuva    │
+         │ EUR→BTC  │  │  viga    │
+         ------------   ------------
+               │             │
+               ▼             │
+         ------------        │
+         │  Kuva    │-Rööpkülik│
+         │ tulemus  │        │
+         ------------        │
+               │             │
+               ---------------
+                      │
+                      ▼
+                 --------- - Ovaal
+                │   END   │
+                 ---------
+            </pre>
+        </div>
+        See on bitcoini kalkulaator, kus alguses tuleb sisestada summa, siis laetakse see. Siis tuleb tingimus,<br/>
+        kui see laeb edukalt, siis liigutakse edasi arvutamiseni, kui ei siis kuvatakse viga ja protsess lõppeb.<br/>
+        Kui summa on arvutatud, siis kuvatakse tulemus ja protsess lõppeb.
+    </p><br/>
+    <h2>Allikad</h2><br/>
+    <p>
+        https://en.wikipedia.org/wiki/Flowchart#Common_symbols<br/>
+        https://www.lucidchart.com/pages/what-is-a-flowchart-tutorial
+    </p>
 </body>
 </html>
