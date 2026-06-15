@@ -6,6 +6,66 @@
     <title>ERD</title>
 </head>
 <body>
-    <h1>Mis on ERD?</h1>
+    <h1>Mis on ERD?</h1><br />
+    <p>
+        ERD ehk Entity Relationship Diagram kuvab, kuidas objektid, nt inimesed, asjad või kontseptid on seotud<br />
+        üksteisega süsteemis. Neid tihti kasutatakse et desainida andmebaase. Need kasutavad erinevaid sümboleid<br />
+        et näidata, kuidas midagi on millegagi seotud.
+    </p><br /><br />
+    <h3>Kus neid kasutatakse?</h3><br />
+    <p>
+        Kasutatakse andmebaaside desainimises või debuggimises. Kasutusaladeks on:<br />
+        Inseneritöös, äri infosüsteemides, haridus, teadus jpt.
+    </p><br /><br />
+    <h3>Ühenduselemendid</h3><br />
+    <p>
+        Ühenduselemendid näitavad, kuidas objektid üksteisega seotud on, siin on mõned näited:<br /><br />
+        Otsade põhisümbolid<br />
+        ---|| - Täpselt üks<br />
+        ---|o - Null või üks, ehk valikuline<br />
+        }---| - Üks või mitu<br />
+        }---o - Null, üks või mitu.<br />
+        Kombineeritud suhted<br />
+        ||---|| - Täpselt üks<br />
+        ||---o{ - Täpselt üks A - null kuni mitu B<br />
+        ||---|{ - Täpselt üks A - üks kuni mitu B<br />
+        |o---o{ - Null/üks A - null kuni mitu B<br />
+        }o---o{ - Null/mitu A - null/mitu B<br />
+    </p><br /><br />
+    <h3>Olemitabel</h3><br />
+    <p>
+        Olemitabelis on mingi andmeväli, olemitabelil peab olema valikuliselt mingi võti (FK,PK jne)<br />
+        ja ka väljatüüp
+    </p><br /><br />
+    <h3>Keyd</h3><br />
+    <p>
+        Primary key - iga rea unikaalne tunnus tabeli, ei tohi olla korduv, tavaliselt on id.<br />
+        Foreign key - Viitab teise tabeli primary keyle. Loob seose kahe tabeli vahel.<br />
+        Composite key - Primaarvõti, mis koosneb kahest või enamast veerust.<br />
+        Key - Väli mis peab olema unikaalne, aga ei ole primaarvõti.
+    </p><br /><br />
+    <h3>Näited</h3><br />
+    <p>
+        <div class="diagram"><pre>
+            -----------------------          ------------------------
+            │      KASUTAJA       │          │       PROFIIL        │
+            -----------------------          ------------------------
+            │ PK   │ id           │ ││--││   │ PK   │ id            │
+            │      │ eesnimi      │          │ FK   │ kasutaja_id   │
+            │ UK   │ email        │          │      │ avatar_url    │
+            │      │ loodud       │          │      │ bio           │
+            -----------------------          ------------------------
+        </pre>
+        </div>
+
+    Siin näites On Kasutaja Tabeli primary key ja Profiili tabeli foreign key seotud. Profiili kasutaja_id<br />
+    tuleneb Kasutaja id'st.
+    </p><br /><br />
+    <h2>Allikad</h2><br />
+    <p>
+        https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model<br/>
+        https://www.lucidchart.com/pages/er-diagrams<br/>
+        https://creately.com/guides/er-diagram-symbols/<br/>
+    </p>
 </body>
 </html>
